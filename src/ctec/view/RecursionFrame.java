@@ -1,6 +1,6 @@
 package ctec.view;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 import ctec.view.RecursionPanel;
 import ctec.controller.RecursionController;
 
@@ -18,7 +18,9 @@ public class RecursionFrame extends JFrame
 	
 	private void setupFrame()
 	{
-		this.setSize(500,500);	//Must be first
+		this.setContentPane(basePanel);
+		this.setSize(450,300);
+		this.setTitle("Recursion");
 		this.setVisible(true);	//Must be last
 	}
 	
