@@ -2,7 +2,6 @@ package ctec.view;
 
 import java.awt.Color;
 import java.awt.event.*;
-
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -83,13 +82,6 @@ public class RecursionPanel extends JPanel
 				{
 					resultsArea.setText(baseController.doFactorial(userInput));
 				}
-			}
-
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				// TODO Auto-generated method stub
-				
 			}
 		});
 	}

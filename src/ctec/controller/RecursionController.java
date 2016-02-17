@@ -1,8 +1,9 @@
 package ctec.controller;
 
-
 import ctec.model.RecursionTool;
+import ctec.model.RecursionTimer;
 import ctec.view.RecursionFrame;
+import org.apache.commons.lang.time.StopWatch;
 
 public class RecursionController
 {
@@ -18,8 +19,12 @@ public class RecursionController
 	
 	public void start()
 	{
+		startTimer();
 		calculatedValue = Integer.toString(mathTool.getFibNumber(0));
+		stopTimer();
+		displayTimerInfo();
 	}
+
 	public String getCalculatedValue()
 	{
 		return calculatedValue;
