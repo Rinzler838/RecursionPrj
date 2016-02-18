@@ -1,49 +1,40 @@
 package ctec.model;
 
-import org.apache.commons.lang.time.StopWatch;
 import ctec.controller.RecursionController;
 
-public class RecursionTimer extends Object
+public class RecursionTimer
 {
 	private long executionTime;
-	private Timer recursionTimer;
 	
 	public RecursionTimer()
 	{
-		executionTime = 0;
-	}
-	
-	public void displayTimerInfo()
-	{
-		System.out.println("Elapsed milliseconds: " + executionTime);
+		this.executionTime = 0;
 	}
 	
 	public void startTimer()
 	{
-		recursionTimer.start();
+		this.executionTime = System.nanoTime();
 	}
 	
 	public void stopTimer()
 	{
-		recursionTimer.stop();
+		this.executionTime = System.nanoTime() - executionTime;
 	}
 	
 	public void resetTimer()
 	{
-		recursionTimer.restart();
+		this.executionTime = 0;
 	}
 	
-	public long getExecutionTimerInMicroSeconds(long executionTime)
+	public long getExecutionTimer()
 	{
 		return executionTime;
 	}
 	
-	public long getElapsedTime()
+	public String toString()
 	{
-		long startTime = System.nanoTime();
-		long endTime = System.nanoTime();
-		long executionTime = endTime - startTime;
+		String timerDescription = "Current execution time is: " + this.executionTime + " in nanoseconds.";
 		
-		return executionTime;
+		return timerDescription;
 	}
 }
